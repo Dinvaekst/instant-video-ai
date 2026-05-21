@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instant Video AI</title>
+
+  <meta name="robots" content="noindex,nofollow" />
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+    }
+
+    body{
+      background:#050505;
+      color:white;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }
+
+    .bg{
+      position:absolute;
+      width:900px;
+      height:900px;
+      border-radius:50%;
+      background:rgba(186,255,74,.18);
+      filter:blur(140px);
+      top:-300px;
+      left:-200px;
+    }
+
+    .card{
+      width:420px;
+      padding:40px;
+      border-radius:30px;
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      backdrop-filter:blur(20px);
+      z-index:10;
+    }
+
+    h1{
+      font-size:42px;
+      margin-bottom:12px;
+    }
+
+    p{
+      color:#b4b4b4;
+      margin-bottom:28px;
+      line-height:1.5;
+    }
+
+    input{
+      width:100%;
+      padding:18px;
+      border:none;
+      outline:none;
+      border-radius:18px;
+      background:#181818;
+      color:white;
+      font-size:18px;
+      margin-bottom:18px;
+    }
+
+    button{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:18px;
+      background:#baff4a;
+      color:black;
+      font-size:18px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .hidden{
+      display:none;
+    }
+
+    .app{
+      text-align:center;
+    }
+
+    .app h2{
+      font-size:54px;
+      margin-bottom:20px;
+    }
+
+    .app p{
+      color:#d1d5db;
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="card" id="loginBox">
+  <h1>Instant Video AI 🚀</h1>
+
+  <p>
+    Private AI ad generator system.
+  </p>
+
+  <input
+    type="password"
+    id="password"
+    placeholder="Enter access code"
+  />
+
+  <button onclick="login()">
+    Access Platform
+  </button>
+</div>
+
+<div class="card hidden app" id="appBox">
+  <h2>Access Granted ✅</h2>
+
+  <p>
+    Your private AI video system is now online.
+  </p>
+</div>
+
+<script>
+  const ACCESS_CODE = "mgg2026";
+
+  function login(){
+    const value =
+      document.getElementById("password").value;
+
+    if(value === ACCESS_CODE){
+      document
+        .getElementById("loginBox")
+        .classList.add("hidden");
+
+      document
+        .getElementById("appBox")
+        .classList.remove("hidden");
+    }else{
+      alert("Wrong access code");
+    }
+  }
+</script>
+
+</body>
+</html>

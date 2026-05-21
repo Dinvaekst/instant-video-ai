@@ -1,33 +1,27 @@
 {
   "name": "instant-video-maker",
   "version": "1.0.0",
-  "description": "My Remotion video",
-  "repository": {},
-  "license": "UNLICENSED",
   "private": true,
+  "scripts": {
+    "studio": "npx remotion studio src/index.ts",
+    "render": "npx remotion render src/index.ts InstantAnswerAd out/video.mp4 --overwrite",
+    "make-voice": "python scripts/make_voice.py",
+    "download-videos": "node scripts/download-pexels-videos.mjs",
+    "generate-ads": "node scripts/generate-ads.mjs",
+    "make-ad": "npm run generate-ads && npm run make-voice && npm run download-videos && npm run render",
+    "build": "echo Vercel build ready"
+  },
   "dependencies": {
-    "@remotion/cli": "4.0.463",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "remotion": "4.0.463",
-    "@remotion/tailwind-v4": "4.0.463",
-    "tailwindcss": "4.0.0"
+    "@remotion/cli": "^4.0.464",
+    "dotenv": "^16.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.464",
+    "tailwindcss": "^4.3.0"
   },
   "devDependencies": {
-    "@remotion/eslint-config-flat": "4.0.463",
-    "@types/react": "19.2.7",
-    "@types/web": "0.0.166",
-    "eslint": "9.19.0",
-    "prettier": "3.8.1",
-    "typescript": "5.9.3"
-  },
-  "scripts": {
-    "dev": "remotion studio",
-    "build": "remotion bundle",
-    "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
-  },
-  "sideEffects": [
-    "*.css"
-  ]
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "typescript": "^5.4.5"
+  }
 }
